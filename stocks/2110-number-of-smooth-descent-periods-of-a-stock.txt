@@ -1,0 +1,3 @@
+The idea is to split the stocks into their own individual descents.
+After that, it remains to count how many unique smooth descents are subsequences of a size s smooth descent.
+Testing it out for s=3 and s=4, we easily see the pattern.

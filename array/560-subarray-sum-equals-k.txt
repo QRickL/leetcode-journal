@@ -1,0 +1,12 @@
+The time and space are both O(n).
+We make one pass and store at worst one number in the dict() for reach index i.
+This is similar to 523. Now rather than checking divisibility, we simply find if the desired difference is in the dicitionary.
+Idea: if k=50 and we currently have 150, we see if a previous subarray sums to 100.
+If yes, then the current prefix sum minus that one gives us 50, so add to count.
+Since there are multiple arrays, we don't use a set, but a dict to track how many previous 100s we have seen.
+
+At first I tried bruteforcing with O(n^2). I should have expected that to fail.
+
+My takeaway from December 14th 2025 practice: when I see a subarray problem, think hashmaps first, and prefix sums second.
+Hashmaps are good because if we make one pass through the array, we can either look forward on the left index, or look backwards on the right index.
+Looking forward introduces lookahead/weirdness, whereas we can memorize results for a cost of O(n) space and make looking back easy.

@@ -1,0 +1,8 @@
+The solution is in O(n) time and O(k) space.
+
+This is basically identical to 525. Well actually 525 is basically just a special case of 523.
+Initially, I did not have the >= 2 check, so I got some errors.
+Because of this, I started off with a set rather than a dict.
+Again, the idea is the same, we just make the remainder mod k the key.
+If we see two identical remainders, then the numbers in between must sum to 0 mod k.
+Since we don't need a max/min answer, we just check if the distance between the cur and first index is >= 2.

@@ -1,0 +1,15 @@
+First method is O(n) time and O(1) space. The O(n) solution uses a sliding window.
+We initialize a left and right pointer to keep track of the end points, and a cumulative sum of values between them, inclusive.
+If the sum is less than the target, then this is not even a candidate, so we have to move right pointer by one to add more.
+If the sum is equal to or greater than the target, then we have a potential candidate.
+We see if it is minimal, then decrease the sum by moving left forward;
+this is because removing the leftmost element can still result in a sum greater than the target with less indices used.
+
+What I tried before that didn't work was moving right pointer backwards after starting it at len(nums)-1.
+This didn't work because in this case, we don't know whether to move left up or right down in the case of the sum being above the target.
+Lookaheads or recursion would probably be bad for time complexity, so I opted for the sliding window after.
+
+Second solution is O(n logn) time and O(n) space using a prefix sum.
+Start a left pointer that moves from 0 to len(nums) - 1
+Then we can search the minimal value of the right pointer in O(log n) time.
+The prefix sum is so we can compute the values of the subarray in O(1) time

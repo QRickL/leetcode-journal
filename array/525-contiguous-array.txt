@@ -1,0 +1,13 @@
+The solution is O(n) in both time and space.
+We want to find the longest contiguous array with equal zeroes and ones.
+We will keep a cumulative sum of the excess/deficient number of ones.
+The first index where there is a certain execess/deficit of ones will be stored.
+For example lets say we say 2 maps to 4.
+Then later we encounter another point where the diff is 2, say at position 54.
+Then between 5 and 54, there is an equal number of zeroes and ones.
+This we add 54 - 4 as a candidate.
+Iterate throughout the entire set to find the maximum value.
+
+
+Initially, I used a prefix sum and checked all left, right pairs.
+This was O(n^2) and resulted in TLE.

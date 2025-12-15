@@ -1,0 +1,9 @@
+Solution is O(n) time and O(1) space as required by the problem statement.
+
+I genuinely had no idea how to solve this just looking at the statement.
+For a hit, I hit tags and saw bit manipulation, which reminded me of radix sort from cs 240.
+I basically had a map, but rather than for each integer in the range -2^31 to 2^31 - 1, its just 32 fields for each digit.
+However, I realized that the map was unnecessary if I switched the order of my loop.
+
+The takeaway from this problem is that don't overlook the fundamentals.
+Once I saw bit manip, I knew to look for total mod 3 == 1

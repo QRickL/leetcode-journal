@@ -1,0 +1,7 @@
+Init/construction time is O(n^2) since we build a 2d prefix sum over the entire matrix.
+Runtime of sumRegion is O(1) since we just query the prefix sum.
+
+This problem is basically asking you to compute a double integral/cdf of a bivariate random variable.
+The first sum represents integrating over dx and the second sum represents integrating over dy.
+
+What sumRegion returns is just the rectange, subtracted by the unneeded bits, but add the region that was subtracted twice.
